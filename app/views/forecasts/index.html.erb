@@ -1,0 +1,8 @@
+<!-- app/views/forecasts/index.html.erb -->
+<h1>Weather Forecast</h1>
+<%= form_with url: '/forecasts/detail_page', method: :get do |form| %>
+  <%= form.text_field :address, placeholder: 'Enter an address' %>
+  <%= form.submit 'Get Forecast' %>
+<% end %>
+
+

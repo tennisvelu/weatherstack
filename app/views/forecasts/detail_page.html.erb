@@ -1,0 +1,16 @@
+<!-- app/views/forecasts/show.html.erb -->
+<%= link_to 'Back', root_path %>
+
+<h1> Weather Forecast</h1>
+
+<h3>Address: <%=@address%></h3>
+<% if @forecast %>
+  <% if @cached %>
+    <h3>Forecast data retrieved from cache.</h3>
+  <% end %>
+  <%= loop_values(@forecast["request"]).html_safe%>
+  <%= loop_values(@forecast["location"]).html_safe%>
+  <%= loop_values(@forecast["current"]).html_safe%>
+<% else %>
+  <p><%= @error_message %></p>
+<% end %>
